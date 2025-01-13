@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func DocumentHandler(w http.ResponseWriter, r *http.Request, db *models.Database) {
+func DocumentHandler(w http.ResponseWriter, r *http.Request, group *models.DocumentGroup) {
 	switch r.Method {
 	case http.MethodGet:
 	case http.MethodPost:

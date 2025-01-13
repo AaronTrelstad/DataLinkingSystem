@@ -13,6 +13,7 @@ func DatabaseHandler(w http.ResponseWriter, r *http.Request, db *models.Database
 
 	switch r.Method {
 	case http.MethodGet:
+		w.Header().Set("Content-Type", "application/json")
 		if err := json.NewEncoder(w).Encode(db); err != nil {
 			http.Error(w, fmt.Sprintf("Error encoding response: %v", err), http.StatusInternalServerError)
 		}
